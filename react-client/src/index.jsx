@@ -48,12 +48,18 @@ class App extends React.Component {
     this.setState({ credentials: tempCredentials });
   }
   
-  shareCredentialWithUser(unifyID, credential) {
-
-
+  shareCredentialWithUser(unifyId, credential) {
+    console.log(unifyId, credential);
+    let tempCredentials = this.state.credentials;
+    tempCredentials.forEach((credential, i) => {
+      if (credential.website === credential.website) {
+        tempCredentials[i]['borrower_user_id'] = unifyId;
+      }
+    });
+    this.setState({credentials: tempCredentials});
   }
 
-  render () {
+  render() {
     return (<div className="container">
       <h1>User Name: {exampleData.username}</h1>
       <div className="row">
@@ -65,7 +71,7 @@ class App extends React.Component {
           shareCredentialWithUser={this.shareCredentialWithUser}/>
         </div>
       </div>
-    </div>)
+    </div>);
   }
 }
 

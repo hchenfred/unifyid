@@ -9,6 +9,7 @@ const ListItemDetails = (props) => (
     <div>
       username: {props.selectedCredential.username}
     </div>
+    { props.selectedCredential['borrower_user_id'] ? (<div>borrower: {props.selectedCredential['borrower_user_id']}</div>) : (<div></div>)}
     <button onClick={() => props.deleteCredential(props.selectedCredential)} className="btn btn-danger deleteButton">Delete Credential</button>
     <Form shareCredentialWithUser={props.shareCredentialWithUser} selectedCredential={props.selectedCredential}/>
   </div>

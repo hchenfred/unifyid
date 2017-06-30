@@ -3,8 +3,9 @@ import React, {Component} from 'react';
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {unifyID: ''};
+    this.state = {unifyId: ''};
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmitForm = this.handleSubmitForm.bind(this);
   }
 
   handleInputChange(e) {
@@ -14,6 +15,7 @@ class Form extends Component {
   handleSubmitForm(e) {
     e.preventDefault();
     this.props.shareCredentialWithUser(this.state.unifyId, this.props.selectedCredential);
+    document.querySelector('.myForm').reset();
   }
 
   render() {
