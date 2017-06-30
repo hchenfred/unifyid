@@ -31,12 +31,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.processData(exampleData);
-    
+    this.processData(exampleData);  
   }
 
   render () {
-    return (<div>
+    return (<div className="container">
       <h1>User Name: {exampleData.username}</h1>
       <List credentials={this.state.credentials}/>
     </div>)
