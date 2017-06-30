@@ -6,21 +6,24 @@ class ListItem extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     console.log(this.props.credential.website);
     this.props.setSelectedCredential(this.props.credential);
   }
 
   render() {
+    let shared = this.props.credential['lender_user_id'] ? (<div><button className="shareButton btn btn-static btn-sm">SHARED</button>  {this.props.credential['lender_user_id']}</div>) : (<div></div>);
     return (
       <div>
         <a href="#" onClick={this.handleClick } className="list-group-item listItem">
             <h4 className="website">
               { this.props.credential.website }
             </h4>
-            <div>
-              { this.props.credential.username }
-            </div>
+            <h5>
+              { this.props.userName }
+            </h5>
+            {shared}     
         </a>
       </div>
     );

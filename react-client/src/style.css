@@ -1,3 +1,12 @@
-.listItem::selection {
-  background-color: red;
+.shareButton {
+  color: white;
+}
+
+.deleteButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formInput {
+  width: 100%;
 }
